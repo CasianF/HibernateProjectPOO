@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="442.0" prefWidth="1083.0" style="-fx-background-color: gray;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EleviController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="506.0" prefWidth="1083.0" style="-fx-background-color: gray;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EleviController">
    <children>
-      <TableView fx:id="studentTable" layoutX="308.0" layoutY="14.0" onMouseClicked="#clickedElev" onSort="#loadTable" prefHeight="407.0" prefWidth="761.0">
+      <TableView fx:id="studentTable" layoutX="308.0" layoutY="14.0" onMouseClicked="#clickedElev" onSort="#loadTable" prefHeight="479.0" prefWidth="761.0">
         <columns>
           <TableColumn fx:id="idCol" prefWidth="35.0" text="Id" />
           <TableColumn fx:id="numeCol" prefWidth="100.0" text="Nume" />
@@ -63,8 +63,8 @@
       <TextField fx:id="media_infoTextField" layoutX="88.0" layoutY="271.0" prefHeight="25.0" prefWidth="68.0" />
       <TextField fx:id="media_bioTextField" layoutX="89.0" layoutY="307.0" prefHeight="25.0" prefWidth="68.0" />
       <TextField fx:id="media_sportTextField" layoutX="91.0" layoutY="346.0" prefHeight="25.0" prefWidth="68.0" />
-      <Button layoutX="84.0" layoutY="394.0" mnemonicParsing="false" onAction="#saveButtonAction" text="Save" />
-      <Button layoutX="172.0" layoutY="394.0" mnemonicParsing="false" text="Clear" />
+      <Button layoutX="85.0" layoutY="457.0" mnemonicParsing="false" onAction="#saveButtonAction" text="Save" />
+      <Button layoutX="172.0" layoutY="457.0" mnemonicParsing="false" onAction="#clearButtonAction" text="Clear" />
       <TextField fx:id="media_roTextField" layoutX="105.0" layoutY="181.0" prefHeight="25.0" prefWidth="68.0" />
       <Label layoutX="11.0" layoutY="185.0" prefHeight="17.0" prefWidth="89.0" text="Medie Romana" textFill="WHITE">
          <font>

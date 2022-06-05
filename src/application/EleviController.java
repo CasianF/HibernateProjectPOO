@@ -191,13 +191,13 @@ public class EleviController implements Initializable {
 		EM.getTransaction().begin();
 		e1.setNume(nTextField.getText());
 		e1.setPrenume(prenumeTextField.getText());
-		e1.setMedia_romana(media_mateTextField.getText());
+		e1.setMedia_romana(media_roTextField.getText());
 		e1.setMedia_mate(media_mateTextField.getText());
 		e1.setMedia_info(media_infoTextField.getText());
 		e1.setMedia_bio(media_bioTextField.getText());
 		e1.setMedia_sport(media_sportTextField.getText());
-		e1.setMedia_generala(convertor(e1.getMedia_romana(), e1.getMedia_mate(), e1.getMedia_info(), 
-				e1.getMedia_bio(),e1.getMedia_sport()));
+		e1.setMedia_generala(convertor(e1.getMedia_romana(), e1.getMedia_mate(), e1.getMedia_info(), e1.getMedia_bio(),
+				e1.getMedia_sport()));
 		EM.getTransaction().commit();
 	}
 
@@ -207,8 +207,16 @@ public class EleviController implements Initializable {
 		double mInf = Integer.valueOf(mI);
 		double mBio = Integer.valueOf(mB);
 		double mSp = Integer.valueOf(mS);
-		double sum = (mRO + mMat + mInf + mBio + mSp)/5;
+		double sum = (mRO + mMat + mInf + mBio + mSp) / 5;
 		return String.valueOf(sum);
+	}
+
+	public void clearButtonAction(ActionEvent event) {
+		media_mateTextField.setText(null);
+		media_roTextField.setText(null);
+		media_infoTextField.setText(null);
+		media_bioTextField.setText(null);
+		media_sportTextField.setText(null);
 	}
 
 	public void saveButtonAction(ActionEvent e) {

@@ -9,21 +9,31 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "customers")
+
 public class Customer {
+	
+	public Customer() {
+	}
+
+	public Customer(String username, String password) {
+		this.username = username;
+		this.password = password;
+	}
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name = "id",nullable = false)
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id", nullable = false)
 	int id;
 
-	@Column(name = "username",nullable = false)
+	@Column(name = "username", nullable = false)
 	String username;
 
 	@Column(name = "email")
 	String email;
 
 	@Column(name = "password")
-	String password; 
-	
+	String password;
+
 	public String getPassword() {
 		return password;
 	}
@@ -56,5 +66,4 @@ public class Customer {
 		this.email = email;
 	}
 
-	
 }

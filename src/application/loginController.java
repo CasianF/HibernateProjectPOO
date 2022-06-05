@@ -31,6 +31,8 @@ public class loginController {
 
 
 
+
+
 	@FXML
 	private Button loginButton;
 
@@ -49,6 +51,8 @@ public class loginController {
 	Stage stage;
 	Scene scene;
 
+	
+	
 	public boolean validate(String username, String password) throws SQLException {
 
 		try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/test4", "root",
@@ -78,17 +82,11 @@ public class loginController {
 		String username = usernameTextField.getText();
 		String password = passwordPasswordField.getText();
 		if (validate(username, password) == true) {
-			switchToMainMenu();
-			Customer cust = null;
-			
+			switchToMainMenu();	
 		} else
 			loginLabel.setText("Incorrect username of password");
 	}
 	
-	public void username() {
-		Customer cust = null;
-		cust.setUsername(usernameTextField.getText());
-	}
 	
 	public void switchToRegister(ActionEvent e) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
@@ -100,7 +98,15 @@ public class loginController {
 
 	public void switchToMainMenu() {
 		try {
-			Parent root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
+			
+			String username = usernameTextField.getText();
+			String password = passwordPasswordField.getText();
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("MainMenu.fxml"));	
+			Parent root = loader.load();
+			MainMenu controller = loader.getController();
+			controller.display(username,password);
+			controller.usernameLabel.setText(username);
+			controller.passwordLabel.setText(password);
 			Stage stage = new Stage();
 			stage.setScene(new Scene(root));
 			stage.show();

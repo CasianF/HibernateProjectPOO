@@ -12,16 +12,30 @@
             <Font name="System Bold" size="34.0" />
          </font>
       </Label>
-      <Button layoutX="393.0" layoutY="449.0" mnemonicParsing="false" text="Log out" />
-      <Button layoutX="226.0" layoutY="96.0" mnemonicParsing="false" onAction="#switchToProfile" prefHeight="25.0" prefWidth="391.0" text="Profil">
+      <Button layoutX="371.0" layoutY="416.0" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="40.0" prefWidth="97.0" text="Log out">
          <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Button>
-      <Button layoutX="227.0" layoutY="153.0" mnemonicParsing="false" onAction="#switchToElevi" prefHeight="30.0" prefWidth="391.0" text="Elevi">
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <Button layoutX="224.0" layoutY="315.0" mnemonicParsing="false" onAction="#switchToElevi" prefHeight="40.0" prefWidth="391.0" text="Elevi">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
+      <Label layoutX="327.0" layoutY="125.0" prefHeight="40.0" prefWidth="79.0" text="Hello" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+      <Label fx:id="usernameLabel" layoutX="406.0" layoutY="125.0" prefHeight="40.0" prefWidth="203.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+      <Button layoutX="222.0" layoutY="248.0" mnemonicParsing="false" onAction="#switchToEditProfile" prefHeight="40.0" prefWidth="391.0" text="Edit profile">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Label fx:id="passwordLabel" layoutX="37.0" layoutY="456.0" prefHeight="0.0" prefWidth="0.0" text="123" textFill="#808080" />
    </children>
 </AnchorPane>
