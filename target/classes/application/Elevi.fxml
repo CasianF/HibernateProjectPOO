@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="442.0" prefWidth="1083.0" style="-fx-background-color: gray;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EleviController">
+   <children>
+      <TableView fx:id="studentTable" layoutX="308.0" layoutY="14.0" onMouseClicked="#clickedElev" onSort="#loadTable" prefHeight="407.0" prefWidth="761.0">
+        <columns>
+          <TableColumn fx:id="idCol" prefWidth="35.0" text="Id" />
+          <TableColumn fx:id="numeCol" prefWidth="100.0" text="Nume" />
+            <TableColumn fx:id="prenumeCol" prefWidth="89.0" text="Prenume" />
+            <TableColumn fx:id="mRoCol" prefWidth="109.0" text="Medie Romana" />
+            <TableColumn fx:id="mMateCol" prefWidth="84.0" text="Medie Mate" />
+            <TableColumn fx:id="mInfoCol" prefWidth="74.0" text="Medie Info" />
+            <TableColumn fx:id="mBioCol" prefWidth="69.0" text="Medie Bio" />
+            <TableColumn fx:id="mSportCol" prefWidth="75.0" text="Medie sport" />
+            <TableColumn fx:id="mGeneralaCol" prefWidth="98.0" text="Medie generala" />
+        </columns>
+      </TableView>
+      <Button layoutX="32.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToAddElev" text="Add" />
+      <Button layoutX="86.0" layoutY="14.0" mnemonicParsing="false" text="Edit" />
+      <Button layoutX="142.0" layoutY="14.0" mnemonicParsing="false" onAction="#deleteButtonAction" text="Delete" />
+      <Button layoutX="212.0" layoutY="14.0" mnemonicParsing="false" onAction="#refreshTableButtonAction" text="Refresh" />
+      <Label layoutX="14.0" layoutY="58.0" prefHeight="17.0" prefWidth="68.0" text="Nume" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="120.0" prefHeight="17.0" prefWidth="68.0" text="Prenume" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="11.0" layoutY="232.0" prefHeight="17.0" prefWidth="74.0" text="Medie Mate" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="11.0" layoutY="275.0" prefHeight="17.0" prefWidth="74.0" text="Medie Info" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="11.0" layoutY="311.0" prefHeight="17.0" prefWidth="74.0" text="Media Bio" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="11.0" layoutY="350.0" prefHeight="17.0" prefWidth="74.0" text="Media sport" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nTextField" layoutX="14.0" layoutY="88.0" prefHeight="25.0" prefWidth="280.0" />
+      <TextField fx:id="prenumeTextField" layoutX="14.0" layoutY="137.0" prefHeight="25.0" prefWidth="280.0" />
+      <TextField fx:id="media_mateTextField" layoutX="88.0" layoutY="228.0" prefHeight="25.0" prefWidth="68.0" />
+      <TextField fx:id="media_infoTextField" layoutX="88.0" layoutY="271.0" prefHeight="25.0" prefWidth="68.0" />
+      <TextField fx:id="media_bioTextField" layoutX="89.0" layoutY="307.0" prefHeight="25.0" prefWidth="68.0" />
+      <TextField fx:id="media_sportTextField" layoutX="91.0" layoutY="346.0" prefHeight="25.0" prefWidth="68.0" />
+      <Button layoutX="84.0" layoutY="394.0" mnemonicParsing="false" onAction="#saveButtonAction" text="Save" />
+      <Button layoutX="172.0" layoutY="394.0" mnemonicParsing="false" text="Clear" />
+      <TextField fx:id="media_roTextField" layoutX="105.0" layoutY="181.0" prefHeight="25.0" prefWidth="68.0" />
+      <Label layoutX="11.0" layoutY="185.0" prefHeight="17.0" prefWidth="89.0" text="Medie Romana" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

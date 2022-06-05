@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="508.0" prefWidth="838.0" style="-fx-background-color: gray;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainMenu">
+   <children>
+      <Label layoutX="313.0" prefHeight="85.0" prefWidth="212.0" style="-fx-alignment: center;" text="Main Menu" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="34.0" />
+         </font>
+      </Label>
+      <Button layoutX="393.0" layoutY="449.0" mnemonicParsing="false" text="Log out" />
+      <Button layoutX="226.0" layoutY="96.0" mnemonicParsing="false" onAction="#switchToProfile" prefHeight="25.0" prefWidth="391.0" text="Profil">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="227.0" layoutY="153.0" mnemonicParsing="false" onAction="#switchToElevi" prefHeight="30.0" prefWidth="391.0" text="Elevi">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
