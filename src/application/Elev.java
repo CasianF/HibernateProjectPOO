@@ -5,6 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -25,8 +28,7 @@ public class Elev {
 		this.media_sport = media_sport;
 		this.media_generala = media_generala;
 	}
-
-
+	
 	@Id
 	@Column(name = "id")
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -55,6 +57,10 @@ public class Elev {
 
 	@Column(name = "media_generala")
 	String media_generala;
+	
+	@ManyToOne
+	@JoinColumn(name = "prof_id")
+	Customer customer;
 
 	public int getId() {
 		return id;

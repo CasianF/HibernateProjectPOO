@@ -11,6 +11,8 @@ import javax.print.DocFlavor.URL;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.mapping.List;
+import org.hibernate.query.Query;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -28,17 +30,26 @@ public class profileController implements Initializable {
 	private Label usernameLabel;
 	@FXML
 	private Label passwordLabel;
+	@FXML
+	private Label userIdLabel;
+	@FXML
+	private Label emailLabel;
 
 	Stage stage;
 	Scene scene;
-	
+	public EntityManagerFactory EMF = Persistence.createEntityManagerFactory("idk");
+	EntityManager em = EMF.createEntityManager();
+
+	Session session = em.unwrap(Session.class);
 	@Override
 	public void initialize(java.net.URL arg0, ResourceBundle arg1) {
 	}
-
-	public void display(String username,String password) {
+	
+	public void display(String username,String password,String id, String email) {
+		userIdLabel.setText(id);
 		usernameLabel.setText(username);
 		passwordLabel.setText(password);
+		emailLabel.setText(email);
 	}
 	
 	public void switchToMainMenu(ActionEvent e) throws IOException {

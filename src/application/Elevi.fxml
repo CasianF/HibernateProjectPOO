@@ -23,8 +23,8 @@
             <TableColumn fx:id="mGeneralaCol" prefWidth="98.0" text="Medie generala" />
         </columns>
       </TableView>
-      <Button layoutX="32.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToAddElev" text="Add" />
-      <Button layoutX="86.0" layoutY="14.0" mnemonicParsing="false" text="Edit" />
+      <Button layoutX="91.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToAddElev" text="Add" />
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToMainMenu" text="Back" />
       <Button layoutX="142.0" layoutY="14.0" mnemonicParsing="false" onAction="#deleteButtonAction" text="Delete" />
       <Button layoutX="212.0" layoutY="14.0" mnemonicParsing="false" onAction="#refreshTableButtonAction" text="Refresh" />
       <Label layoutX="14.0" layoutY="58.0" prefHeight="17.0" prefWidth="68.0" text="Nume" textFill="WHITE">
@@ -71,5 +71,6 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
+      <Label fx:id="idLabel" layoutX="86.0" layoutY="406.0" />
    </children>
 </AnchorPane>

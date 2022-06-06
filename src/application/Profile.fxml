@@ -7,26 +7,46 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="508.0" prefWidth="838.0" style="-fx-background-color: gray;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.profileController">
    <children>
-      <Label layoutX="39.0" layoutY="86.0" prefHeight="41.0" prefWidth="152.0" text="Username:" textFill="WHITE">
+      <Label layoutX="20.0" layoutY="210.0" prefHeight="41.0" prefWidth="105.0" text="Username:" textFill="WHITE">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="39.0" layoutY="154.0" prefHeight="41.0" prefWidth="152.0" text="Password:" textFill="WHITE">
+      <Label layoutX="20.0" layoutY="267.0" prefHeight="41.0" prefWidth="105.0" text="Password:" textFill="WHITE">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <Label fx:id="passwordLabel" layoutX="146.0" layoutY="154.0" prefHeight="41.0" prefWidth="152.0" textFill="WHITE">
+      <Label fx:id="passwordLabel" layoutX="131.0" layoutY="267.0" prefHeight="41.0" prefWidth="152.0" textFill="WHITE">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <Label fx:id="usernameLabel" layoutX="146.0" layoutY="86.0" prefHeight="41.0" prefWidth="152.0" textFill="WHITE">
+      <Label fx:id="usernameLabel" layoutX="131.0" layoutY="210.0" prefHeight="41.0" prefWidth="152.0" textFill="WHITE">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
       <Button layoutX="13.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToMainMenu" text="Back" />
+      <Label layoutX="20.0" layoutY="160.0" prefHeight="17.0" prefWidth="111.0" text="User ID:" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="userIdLabel" layoutX="107.0" layoutY="160.0" prefHeight="25.0" prefWidth="83.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="20.0" layoutY="329.0" prefHeight="30.0" prefWidth="75.0" text="Email:" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="emailLabel" layoutX="88.0" layoutY="329.0" prefHeight="30.0" prefWidth="576.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
