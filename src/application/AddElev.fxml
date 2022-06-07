@@ -4,15 +4,32 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="542.0" prefWidth="413.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AddElev">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="542.0" prefWidth="413.0" style="-fx-background-color: gray;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AddElev">
    <children>
-      <Button layoutX="99.0" layoutY="473.0" mnemonicParsing="false" onAction="#createButtonAction" text="Add" />
-      <Button fx:id="closeButton" layoutX="279.0" layoutY="473.0" mnemonicParsing="false" onAction="#closeButtonAction" text="Close" />
-      <Label layoutX="158.0" layoutY="14.0" prefHeight="17.0" prefWidth="97.0" style="-fx-alignment: center;" text="Adauga elev" />
-      <Label layoutX="13.0" layoutY="92.0" text="Nume" />
-      <TextField fx:id="numeTextField" layoutX="13.0" layoutY="127.0" prefHeight="25.0" prefWidth="387.0" />
-      <Label layoutX="13.0" layoutY="203.0" prefHeight="17.0" prefWidth="52.0" text="Prenume" />
-      <TextField fx:id="prenumeTextField" layoutX="13.0" layoutY="233.0" prefHeight="25.0" prefWidth="387.0" />
+      <Button layoutX="62.0" layoutY="455.0" mnemonicParsing="false" onAction="#createButtonAction" prefHeight="43.0" prefWidth="75.0" text="Add">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+      <Button fx:id="closeButton" layoutX="279.0" layoutY="455.0" mnemonicParsing="false" onAction="#closeButtonAction" prefHeight="43.0" prefWidth="75.0" text="Close">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+      <Label layoutX="142.0" layoutY="14.0" prefHeight="52.0" prefWidth="129.0" style="-fx-alignment: center;" text="Adauga elev" textFill="WHITE">
+         <font>
+            <Font name="Bernard MT Condensed" size="24.0" />
+         </font></Label>
+      <Label layoutX="13.0" layoutY="193.0" text="Nume" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <TextField fx:id="numeTextField" layoutX="13.0" layoutY="231.0" prefHeight="25.0" prefWidth="387.0" />
+      <Label layoutX="14.0" layoutY="320.0" prefHeight="19.0" prefWidth="66.0" text="Prenume" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <TextField fx:id="prenumeTextField" layoutX="13.0" layoutY="351.0" prefHeight="25.0" prefWidth="387.0" />
+      <Label fx:id="profIdLabel" layoutX="271.0" layoutY="28.0" prefHeight="25.0" prefWidth="40.0" />
    </children>
 </AnchorPane>

@@ -26,12 +26,16 @@ public class MainMenu implements Initializable {
 
 	@FXML
 	public Label usernameLabel;
-
+	
 	@FXML
 	public Label passwordLabel;
 	@FXML
 	private Label emailLabel;
 
+	public void displayID(String id ) {
+		idLabel.setText(id);
+	}
+	
 	public void display(String username, String password) {
 		usernameLabel.setText(username);
 		passwordLabel.setText(password);
@@ -45,12 +49,15 @@ public class MainMenu implements Initializable {
 		em.getTransaction().commit();
 		em.close();
 	}
-
+	
 	public void switchToElevi(ActionEvent e) throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("Elevi.fxml"));
-		stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-		scene = new Scene(root);
-		stage.setScene(scene);
+		String id = idLabel.getText();
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("Elevi.fxml"));
+		Parent root = loader.load();
+		EleviController controller = loader.getController();
+		controller.idLabel.setText(id);
+		Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+		stage.setScene(new Scene(root));
 		stage.show();
 	}
 
@@ -80,17 +87,16 @@ public class MainMenu implements Initializable {
 	private Label idLabel;
 
 
-	public Customer findByUsername(String username) {
+	public int findByUsername(String username) {
 		EntityManagerFactory EMF = Persistence.createEntityManagerFactory("idk");
 		EntityManager em = EMF.createEntityManager();
 		Query query = em.createQuery("from Customer c where c.username ='" + usernameLabel.getText() + "'");
 		Customer cust = (Customer) query.getSingleResult();
-		System.out.println(cust.getId() + " " + cust.getUsername());
 		em.getTransaction().commit();
 		em.close();
-		return cust;
+		return cust.getId();
 	}
-
+	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 

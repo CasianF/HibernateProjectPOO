@@ -16,6 +16,7 @@ import javax.persistence.Persistence;
 
 import com.mysql.cj.Query;
 
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -78,10 +79,13 @@ public class EleviController implements Initializable {
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		loadTable();
-		
+		Platform.runLater(()->{
+			loadTable();
+			System.out.println("value of idLabel:"+String.valueOf(idLabel.getText()));
+			});
 	}
-
+	
+	
 	Stage stage;
 	Scene scene;
 
@@ -89,7 +93,7 @@ public class EleviController implements Initializable {
 		try {
 			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/test4", "root",
 					"Minecraft20");
-			ResultSet rs = connection.createStatement().executeQuery("select * from elevi");
+			ResultSet rs = connection.createStatement().executeQuery("select * from elevi where prof_id ='"+idLabel.getText()+"'");
 			while (rs.next())
 				ElevList.add(new Elev(rs.getInt("id"), rs.getString("nume"), rs.getString("prenume"),
 						rs.getString("media_romana"), rs.getString("media_mate"), rs.getString("media_info"),
@@ -127,7 +131,7 @@ public class EleviController implements Initializable {
 			ElevList.clear();
 			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/test4", "root",
 					"Minecraft20");
-			ResultSet rs = connection.createStatement().executeQuery("select * from elevi");
+			ResultSet rs = connection.createStatement().executeQuery("select * from elevi where prof_id ='" + idLabel.getText()+"'");
 			while (rs.next())
 				ElevList.add(new Elev(rs.getInt("id"), rs.getString("nume"), rs.getString("prenume"),
 						rs.getString("media_romana"), rs.getString("media_mate"), rs.getString("media_info"),
@@ -148,8 +152,12 @@ public class EleviController implements Initializable {
 	}
 
 	public void switchToAddElev(ActionEvent event) throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("AddElev.fxml"));
-		Stage stage = new Stage();
+		String id = idLabel.getText();
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("AddElev.fxml"));
+		Parent root = loader.load();
+		AddElev controller = loader.getController();
+		controller.setprofIdLabel(String.valueOf(id));
+		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		stage.setScene(new Scene(root));
 		stage.show();
 	}

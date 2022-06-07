@@ -9,10 +9,14 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.query.Query;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -28,10 +32,6 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class loginController {
-
-
-
-
 
 	@FXML
 	private Button loginButton;
@@ -50,44 +50,35 @@ public class loginController {
 
 	Stage stage;
 	Scene scene;
+	EntityManagerFactory EMF = Persistence.createEntityManagerFactory("idk");
 
-	
-	
-	public boolean validate(String username, String password) throws SQLException {
-
-		try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/test4", "root",
-				"Minecraft20");
-
-				PreparedStatement preparedStatement = connection
-						.prepareStatement("SELECT * FROM customers WHERE username = ? and password = ?")) {
-			preparedStatement.setString(1, username);
-			preparedStatement.setString(2, password);
-
-			System.out.println(preparedStatement);
-
-			ResultSet resultSet = preparedStatement.executeQuery();
-			if (resultSet.next()) {
-				Stage stage = (Stage) loginButton.getScene().getWindow();
-				stage.close();
-				return true;
-			}
-
-		} catch (SQLException e) {
-			e.getCause();
-		}
-		return false;
+	public boolean validate(String username, String password) {
+		username = usernameTextField.getText();
+		password = passwordPasswordField.getText();
+		EntityManager em = EMF.createEntityManager();
+		em.getTransaction().begin();
+		Query query = em
+				.createQuery("from Customer c where c.username ='" + username + "' and c.password ='" + password + "'");
+		Customer cust = (Customer) query.getSingleResult();
+		em.getTransaction().commit();
+		em.close();
+		if (cust != null) {
+			Stage stage = (Stage) loginButton.getScene().getWindow();
+			stage.close();
+			return true;
+		} else
+			return false;
 	}
 
 	public void loginButtonAction(ActionEvent e) throws SQLException {
 		String username = usernameTextField.getText();
 		String password = passwordPasswordField.getText();
 		if (validate(username, password) == true) {
-			switchToMainMenu();	
+			switchToMainMenu();
 		} else
 			loginLabel.setText("Incorrect username of password");
 	}
-	
-	
+
 	public void switchToRegister(ActionEvent e) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
 		stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
@@ -98,13 +89,13 @@ public class loginController {
 
 	public void switchToMainMenu() {
 		try {
-			
+
 			String username = usernameTextField.getText();
 			String password = passwordPasswordField.getText();
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("MainMenu.fxml"));	
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("MainMenu.fxml"));
 			Parent root = loader.load();
 			MainMenu controller = loader.getController();
-			controller.display(username,password);
+			controller.display(username, password);
 			controller.usernameLabel.setText(username);
 			controller.passwordLabel.setText(password);
 			Stage stage = new Stage();

@@ -71,6 +71,6 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label fx:id="idLabel" layoutX="86.0" layoutY="406.0" />
+      <Label fx:id="idLabel" layoutX="86.0" layoutY="406.0" prefHeight="17.0" prefWidth="25.0" textFill="WHITE" />
    </children>
 </AnchorPane>

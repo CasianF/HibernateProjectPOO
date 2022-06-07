@@ -55,9 +55,11 @@ public class profileController implements Initializable {
 	public void switchToMainMenu(ActionEvent e) throws IOException {
 		String username = usernameLabel.getText();
 		String password = passwordLabel.getText();
+		String id = userIdLabel.getText();
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("MainMenu.fxml"));	
 		Parent root = loader.load();
 		MainMenu controller = loader.getController();
+		controller.displayID(id);
 		controller.display(username,password);
 		Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
 		stage.setScene(new Scene(root));
