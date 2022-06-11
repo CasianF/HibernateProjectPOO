@@ -58,7 +58,10 @@ public class EleviDisplayController implements Initializable {
 		stage.setScene(scene);
 		stage.show();
 	}
-	
+
+	@FXML
+	private Label numeProfLabel;
+
 	public void getDataByUsername() {
 		try {
 			String nume = numeLabel.getText();
@@ -75,10 +78,13 @@ public class EleviDisplayController implements Initializable {
 			m_BioLabel.setText(elev.getMedia_bio());
 			m_SportLabel.setText(elev.getMedia_sport());
 			prenumeLabel.setText(elev.getPrenume());
+			int id = elev.getCustomer().getId();
+			Customer cust = (Customer) em.createQuery("FROM Customer C where C.id = '" + id + "'").getSingleResult();
+			numeProfLabel.setText(String.valueOf(cust.getUsername()));
 			em.getTransaction().commit();
 			em.clear();
 		} catch (Exception e) {
-			System.out.println("IN GET DATA USER E O PROBLEMA");
+			e.printStackTrace();
 		}
 	}
 

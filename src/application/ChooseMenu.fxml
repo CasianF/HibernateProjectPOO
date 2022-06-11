@@ -7,22 +7,22 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="508.0" prefWidth="838.0" style="-fx-background-color: gray;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ChooseLoginController">
    <children>
-      <Label layoutX="254.0" prefHeight="100.0" prefWidth="351.0" style="-fx-alignment: center;" text="Alege tipul de login" textFill="WHITE">
+      <Label layoutX="244.0" layoutY="7.0" prefHeight="100.0" prefWidth="351.0" style="-fx-alignment: center;" text="Alege tipul de login" textFill="WHITE">
          <font>
             <Font name="Dubai Medium" size="43.0" />
          </font>
       </Label>
-      <Button layoutX="231.0" layoutY="242.0" mnemonicParsing="false" onAction="#switchToElev" prefHeight="66.0" prefWidth="135.0" text="Elev">
+      <Button id="green" layoutX="138.0" layoutY="242.0" mnemonicParsing="false" onAction="#switchToElev" prefHeight="100.0" prefWidth="212.0" stylesheets="@stylesheet.css" text="Elev">
          <font>
-            <Font name="System Bold" size="22.0" />
+            <Font name="Bodoni MT Black Italic" size="35.0" />
          </font>
       </Button>
-      <Button layoutX="462.0" layoutY="242.0" mnemonicParsing="false" onAction="#switchToProfesor" prefHeight="66.0" prefWidth="135.0" text="Profesor">
+      <Button id="green" layoutX="489.0" layoutY="242.0" mnemonicParsing="false" onAction="#switchToProfesor" prefHeight="100.0" prefWidth="212.0" stylesheets="@stylesheet.css" text="Profesor" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="21.0" />
+            <Font name="Berlin Sans FB Bold" size="33.0" />
          </font>
       </Button>
-      <Button fx:id="exitButton" layoutX="789.0" layoutY="7.0" mnemonicParsing="false" onAction="#closeActionButton" text="Exit">
+      <Button id="red" fx:id="exitButton" layoutX="789.0" layoutY="7.0" mnemonicParsing="false" onAction="#closeActionButton" stylesheets="@stylesheet.css" text="Exit">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>

@@ -18,7 +18,7 @@
       <TextField fx:id="usernameTextField" layoutX="40.0" layoutY="140.0" prefHeight="25.0" prefWidth="758.0" promptText="Enter username here" />
       <PasswordField fx:id="passwordTextField" layoutX="41.0" layoutY="273.0" prefHeight="25.0" prefWidth="758.0" promptText="Enter password here" />
       <PasswordField fx:id="confirmPasswordTextField" layoutX="41.0" layoutY="344.0" prefHeight="25.0" prefWidth="758.0" promptText="Confirm password here" />
-      <Button id="green" fx:id="registerButton" layoutX="366.0" layoutY="408.0" mnemonicParsing="false" onAction="#createButtonAction" prefHeight="47.0" prefWidth="108.0" stylesheets="@../../../../Downloads/stylesheet.css" text="Register">
+      <Button id="green" fx:id="registerButton" layoutX="366.0" layoutY="408.0" mnemonicParsing="false" onAction="#createButtonAction" prefHeight="47.0" prefWidth="108.0" stylesheets="@stylesheet.css" text="Register">
          <font>
             <Font name="Dubai Medium" size="20.0" />
          </font>
@@ -48,7 +48,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Button id="red" layoutX="6.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToLogIn" stylesheets="@../../../../Downloads/stylesheet.css" text="Back">
+      <Button id="red" layoutX="6.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToLogIn" stylesheets="@stylesheet.css" text="Back">
          <font>
             <Font name="Dubai Medium" size="13.0" />
          </font></Button>

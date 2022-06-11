@@ -66,7 +66,7 @@ public class loginController {
 			stage.close();
 			switchToMainMenu();
 		} else
-			loginLabel.setText("Incorrect username of password");
+			loginLabel.setText("Nume sau parola incorecta");
 	}
 
 	public void switchToRegister(ActionEvent e) throws IOException {

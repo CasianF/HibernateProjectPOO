@@ -3,17 +3,16 @@ package application;
 import java.io.IOException;
 
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.DriverManager;
-
-import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 
+import org.hibernate.Session;
 
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
@@ -68,38 +67,36 @@ public class EleviController implements Initializable {
 	public EntityManagerFactory EMF = Persistence.createEntityManagerFactory("idk");
 	ObservableList<Elev> ElevList = FXCollections.observableArrayList();
 
-	
 	@FXML
 	Label idLabel;
-	
+
 	public void loadId(String id) {
 		idLabel.setText(id);
 	}
-	
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		Platform.runLater(()->{
+		Platform.runLater(() -> {
 			loadTable();
-			System.out.println("value of idLabel:"+String.valueOf(idLabel.getText()));
-			});
+		});
 	}
-	
-	
+
 	Stage stage;
 	Scene scene;
+	EntityManager em = EMF.createEntityManager();
+	Session session = em.unwrap(Session.class);
 
 	public void loadTable() {
-		try {
-			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/test4", "root",
-					"Minecraft20");
-			ResultSet rs = connection.createStatement().executeQuery("select * from elevi where prof_id ='"+idLabel.getText()+"'");
-			while (rs.next())
-				ElevList.add(new Elev(rs.getInt("id"), rs.getString("nume"), rs.getString("prenume"),
-						rs.getString("media_romana"), rs.getString("media_mate"), rs.getString("media_info"),
-						rs.getString("media_bio"), rs.getString("media_sport"), rs.getString("media_generala")));
-		} catch (SQLException e) {
-
-			e.printStackTrace();
+		em.getTransaction().begin();
+		Query query = em.createQuery("FROM Elev where prof_id='" + idLabel.getText() + "'");
+		@SuppressWarnings("unchecked")
+		List<Elev> list = query.getResultList();
+		em.getTransaction().commit();
+		em.clear();
+		int n = list.size();
+		for (int i = 0; i < n; i++) {
+			Elev e = list.get(i);
+			ElevList.add(e);
 		}
 
 		idCol.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -125,22 +122,19 @@ public class EleviController implements Initializable {
 		EM.close();
 		refreshTable();
 	}
-	
+
 	public void refreshTable() {
-		try {
-
-			ElevList.clear();
-			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/test4", "root",
-					"Minecraft20");
-			ResultSet rs = connection.createStatement().executeQuery("select * from elevi where prof_id ='" + idLabel.getText()+"'");
-			while (rs.next())
-				ElevList.add(new Elev(rs.getInt("id"), rs.getString("nume"), rs.getString("prenume"),
-						rs.getString("media_romana"), rs.getString("media_mate"), rs.getString("media_info"),
-						rs.getString("media_bio"), rs.getString("media_sport"), rs.getString("media_generala")));
-			studentTable.setItems(ElevList);
-		} catch (SQLException e) {
-
-			e.printStackTrace();
+		ElevList.clear();
+		em.getTransaction().begin();
+		Query query = em.createQuery("FROM Elev where prof_id='" + idLabel.getText() + "'");
+		@SuppressWarnings("unchecked")
+		List<Elev> list = query.getResultList();
+		em.getTransaction().commit();
+		em.clear();
+		int n = list.size();
+		for (int i = 0; i < n; i++) {
+			Elev e = list.get(i);
+			ElevList.add(e);
 		}
 	}
 
@@ -174,7 +168,7 @@ public class EleviController implements Initializable {
 		stage.show();
 	}
 
-	///////////////////////////////////// Edit elev part
+	///////////////// Edit elev part
 
 	@FXML
 	private TextField media_bioTextField;

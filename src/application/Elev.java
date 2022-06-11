@@ -58,6 +58,16 @@ public class Elev {
 	@ManyToOne
 	@JoinColumn(name = "prof_id")
 	Customer customer;
+	
+	
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+
 	public Elev() {}
 
 	public int getId() {

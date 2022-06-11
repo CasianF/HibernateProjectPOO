@@ -13,8 +13,8 @@
          <font>
             <Font name="Dubai Medium" size="30.0" />
          </font></Label>
-      <TextField fx:id="usernameTextField" layoutX="80.0" layoutY="229.0" prefHeight="25.0" prefWidth="682.0" promptText="Enter username here" />
-      <PasswordField fx:id="passwordPasswordField" layoutX="80.0" layoutY="312.0" prefHeight="25.0" prefWidth="682.0" promptText="enter password here" />
+      <TextField fx:id="usernameTextField" layoutX="80.0" layoutY="229.0" prefHeight="25.0" prefWidth="682.0" promptText="Introduceti username-ul aici" />
+      <PasswordField fx:id="passwordPasswordField" layoutX="80.0" layoutY="312.0" prefHeight="25.0" prefWidth="682.0" promptText="Introduceti parola aici" />
       <Label layoutX="80.0" layoutY="189.0" prefHeight="17.0" prefWidth="95.0" text="Username" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
@@ -30,8 +30,8 @@
             <Font name="Dubai Medium" size="21.0" />
          </font>
       </Label>
-      <Button fx:id="registerButton" layoutX="695.0" layoutY="458.0" mnemonicParsing="false" onAction="#switchToRegister" prefHeight="25.0" prefWidth="82.0" text="Register" />
-      <Button id="line" fx:id="loginButton" layoutX="379.0" layoutY="372.0" mnemonicParsing="false" onAction="#loginButtonAction" prefHeight="25.0" prefWidth="82.0" stylesheets="@../../../../Downloads/stylesheet.css" text="Login">
+      <Button id="glass" fx:id="registerButton" layoutX="695.0" layoutY="456.0" mnemonicParsing="false" onAction="#switchToRegister" prefHeight="32.0" prefWidth="88.0" stylesheets="@stylesheet.css" text="Register" />
+      <Button id="line" fx:id="loginButton" layoutX="379.0" layoutY="372.0" mnemonicParsing="false" onAction="#loginButtonAction" prefHeight="25.0" prefWidth="82.0" stylesheets="@stylesheet.css" text="Login">
          <font>
             <Font name="Dubai Medium" size="17.0" />
          </font></Button>
@@ -40,7 +40,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Button layoutX="7.0" layoutY="8.0" mnemonicParsing="false" onAction="#switchToChooseLogin" text="Back">
+      <Button id="red" layoutX="7.0" layoutY="8.0" mnemonicParsing="false" onAction="#switchToChooseLogin" stylesheets="@stylesheet.css" text="Back">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

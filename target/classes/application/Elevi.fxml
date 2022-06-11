@@ -11,7 +11,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="506.0" prefWidth="1083.0" style="-fx-background-color: gray;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EleviController">
    <children>
-      <Button id="green" layoutX="91.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToAddElev" prefWidth="45.0" stylesheets="@../../../../Downloads/stylesheet.css" text="Add" />
+      <Button id="green" layoutX="91.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToAddElev" prefWidth="45.0" stylesheets="@stylesheet.css" text="Add" />
       <TableView fx:id="studentTable" layoutX="308.0" layoutY="14.0" onMouseClicked="#clickedElev" onSort="#loadTable" prefHeight="479.0" prefWidth="761.0">
         <columns>
           <TableColumn fx:id="idCol" prefWidth="29.0" text="Id" />
@@ -30,8 +30,8 @@
             <URL value="@application.css" />
             <URL value="@../../../../Downloads/stylesheet.css" />
          </stylesheets></Button>
-      <Button id="glass" layoutX="148.0" layoutY="14.0" mnemonicParsing="false" onAction="#deleteButtonAction" stylesheets="@../../../../Downloads/stylesheet.css" text="Delete" />
-      <Button id="glass" layoutX="212.0" layoutY="14.0" mnemonicParsing="false" onAction="#refreshTableButtonAction" stylesheets="@../../../../Downloads/stylesheet.css" text="Refresh" />
+      <Button id="red" layoutX="148.0" layoutY="14.0" mnemonicParsing="false" onAction="#deleteButtonAction" stylesheets="@stylesheet.css" text="Delete" />
+      <Button id="glass" layoutX="212.0" layoutY="14.0" mnemonicParsing="false" onAction="#refreshTableButtonAction" stylesheets="@stylesheet.css" text="Refresh" />
       <Label layoutX="14.0" layoutY="58.0" prefHeight="17.0" prefWidth="68.0" text="Nume" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
@@ -68,8 +68,8 @@
       <TextField fx:id="media_infoTextField" layoutX="88.0" layoutY="271.0" prefHeight="25.0" prefWidth="68.0" />
       <TextField fx:id="media_bioTextField" layoutX="89.0" layoutY="307.0" prefHeight="25.0" prefWidth="68.0" />
       <TextField fx:id="media_sportTextField" layoutX="91.0" layoutY="346.0" prefHeight="25.0" prefWidth="68.0" />
-      <Button id="glass" layoutX="70.0" layoutY="443.0" mnemonicParsing="false" onAction="#saveButtonAction" prefHeight="39.0" prefWidth="56.0" stylesheets="@../../../../Downloads/stylesheet.css" text="Save" />
-      <Button id="glass" layoutX="172.0" layoutY="443.0" mnemonicParsing="false" onAction="#clearButtonAction" prefHeight="42.0" prefWidth="68.0" stylesheets="@../../../../Downloads/stylesheet.css" text="Clear" />
+      <Button id="glass" layoutX="70.0" layoutY="443.0" mnemonicParsing="false" onAction="#saveButtonAction" prefHeight="39.0" prefWidth="56.0" stylesheets="@stylesheet.css" text="Save" />
+      <Button id="glass" layoutX="172.0" layoutY="443.0" mnemonicParsing="false" onAction="#clearButtonAction" prefHeight="42.0" prefWidth="68.0" stylesheets="@stylesheet.css" text="Clear" />
       <TextField fx:id="media_roTextField" layoutX="105.0" layoutY="181.0" prefHeight="25.0" prefWidth="68.0" />
       <Label layoutX="11.0" layoutY="185.0" prefHeight="17.0" prefWidth="89.0" text="Medie Romana" textFill="WHITE">
          <font>
