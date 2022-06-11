@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="508.0" prefWidth="838.0" style="-fx-background-color: gray;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EleviDisplayController">
+   <children>
+      <Label layoutX="28.0" layoutY="87.0" prefHeight="36.0" prefWidth="59.0" text="Nume:" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="24.0" layoutY="149.0" prefHeight="36.0" prefWidth="83.0" text="Prenume:" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="24.0" layoutY="218.0" prefHeight="36.0" prefWidth="67.0" text="ID Elev:" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="28.0" layoutY="34.0" prefHeight="36.0" prefWidth="209.0" text="Datele elevului:" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="518.0" layoutY="34.0" prefHeight="36.0" prefWidth="209.0" text="Mediile elevului:" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="518.0" layoutY="87.0" prefHeight="36.0" prefWidth="175.0" text="Media Informatica:" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="518.0" layoutY="149.0" prefHeight="36.0" prefWidth="175.0" text="Media Matematica:" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="518.0" layoutY="200.0" prefHeight="36.0" prefWidth="144.0" text="Media Biologie:" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="518.0" layoutY="261.0" prefHeight="36.0" prefWidth="169.0" text="Media Lb.Romana:" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="518.0" layoutY="320.0" prefHeight="36.0" prefWidth="122.0" text="Media Sport:" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="506.0" layoutY="399.0" prefHeight="36.0" prefWidth="169.0" text="Media generala:" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label fx:id="numeLabel" layoutX="91.0" layoutY="87.0" prefHeight="36.0" prefWidth="384.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="prenumeLabel" layoutX="117.0" layoutY="149.0" prefHeight="36.0" prefWidth="339.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="IdLabel" layoutX="91.0" layoutY="218.0" prefHeight="36.0" prefWidth="83.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="m_InfoLabel" layoutX="686.0" layoutY="87.0" prefHeight="36.0" prefWidth="83.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="m_MateLabel" layoutX="686.0" layoutY="149.0" prefHeight="36.0" prefWidth="83.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="m_BioLabel" layoutX="662.0" layoutY="200.0" prefHeight="36.0" prefWidth="83.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="m_RoLabel" layoutX="679.0" layoutY="261.0" prefHeight="36.0" prefWidth="83.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="m_SportLabel" layoutX="638.0" layoutY="320.0" prefHeight="36.0" prefWidth="83.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="m_GenLabel" layoutX="679.0" layoutY="399.0" prefHeight="36.0" prefWidth="83.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="4.0" layoutY="471.0" mnemonicParsing="false" onAction="#switchToEleviLogin" text="Log out">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

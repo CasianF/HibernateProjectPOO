@@ -6,13 +6,10 @@ import java.util.ResourceBundle;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import javax.print.DocFlavor.URL;
+
 
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
-import org.hibernate.mapping.List;
-import org.hibernate.query.Query;
+
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -55,9 +52,11 @@ public class profileController implements Initializable {
 	public void switchToMainMenu(ActionEvent e) throws IOException {
 		String username = usernameLabel.getText();
 		String password = passwordLabel.getText();
+		String id = userIdLabel.getText();
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("MainMenu.fxml"));	
 		Parent root = loader.load();
 		MainMenu controller = loader.getController();
+		controller.displayID(id);
 		controller.display(username,password);
 		Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
 		stage.setScene(new Scene(root));

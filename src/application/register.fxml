@@ -9,33 +9,41 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="508.0" prefWidth="838.0" style="-fx-background-color: gray;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.loginController">
    <children>
-      <Label layoutX="292.0" layoutY="14.0" prefHeight="87.0" prefWidth="255.0" style="-fx-alignment: center;" text="Login Menu" textFill="WHITE">
+      <Label layoutX="231.0" layoutY="14.0" prefHeight="128.0" prefWidth="397.0" style="-fx-alignment: center;" text="Login Menu" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="30.0" />
+            <Font name="Dubai Medium" size="30.0" />
          </font></Label>
-      <TextField fx:id="usernameTextField" layoutX="124.0" layoutY="229.0" prefHeight="25.0" prefWidth="610.0" promptText="Enter username here" />
-      <PasswordField fx:id="passwordPasswordField" layoutX="124.0" layoutY="312.0" prefHeight="25.0" prefWidth="610.0" promptText="enter password here" />
-      <Label layoutX="121.0" layoutY="189.0" prefHeight="17.0" prefWidth="95.0" text="Username" textFill="WHITE">
+      <TextField fx:id="usernameTextField" layoutX="80.0" layoutY="229.0" prefHeight="25.0" prefWidth="682.0" promptText="Enter username here" />
+      <PasswordField fx:id="passwordPasswordField" layoutX="80.0" layoutY="312.0" prefHeight="25.0" prefWidth="682.0" promptText="enter password here" />
+      <Label layoutX="80.0" layoutY="189.0" prefHeight="17.0" prefWidth="95.0" text="Username" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="121.0" layoutY="270.0" prefHeight="17.0" prefWidth="95.0" text="Password" textFill="WHITE">
+      <Label layoutX="80.0" layoutY="269.0" prefHeight="17.0" prefWidth="95.0" text="Password" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="456.0" layoutY="457.0" prefHeight="27.0" prefWidth="255.0" text="Dont have an account yet?" textFill="WHITE">
+      <Label layoutX="549.0" layoutY="452.0" prefHeight="27.0" prefWidth="146.0" text="Nu ai cont inca?" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="Dubai Medium" size="21.0" />
          </font>
       </Label>
       <Button fx:id="registerButton" layoutX="695.0" layoutY="458.0" mnemonicParsing="false" onAction="#switchToRegister" prefHeight="25.0" prefWidth="82.0" text="Register" />
-      <Button fx:id="loginButton" layoutX="379.0" layoutY="372.0" mnemonicParsing="false" onAction="#loginButtonAction" prefHeight="25.0" prefWidth="82.0" text="Login" />
+      <Button id="line" fx:id="loginButton" layoutX="379.0" layoutY="372.0" mnemonicParsing="false" onAction="#loginButtonAction" prefHeight="25.0" prefWidth="82.0" stylesheets="@../../../../Downloads/stylesheet.css" text="Login">
+         <font>
+            <Font name="Dubai Medium" size="17.0" />
+         </font></Button>
       <Label fx:id="loginLabel" layoutX="260.0" layoutY="415.0" prefHeight="19.0" prefWidth="320.0" style="-fx-alignment: center;" textFill="RED">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
+      <Button layoutX="7.0" layoutY="8.0" mnemonicParsing="false" onAction="#switchToChooseLogin" text="Back">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

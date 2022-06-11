@@ -1,11 +1,11 @@
 package application;
 
 import java.io.IOException;
-import java.io.Serializable;
+
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -14,8 +14,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import com.mysql.cj.Query;
 
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -25,7 +25,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
+
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -78,10 +78,13 @@ public class EleviController implements Initializable {
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		loadTable();
-		
+		Platform.runLater(()->{
+			loadTable();
+			System.out.println("value of idLabel:"+String.valueOf(idLabel.getText()));
+			});
 	}
-
+	
+	
 	Stage stage;
 	Scene scene;
 
@@ -89,7 +92,7 @@ public class EleviController implements Initializable {
 		try {
 			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/test4", "root",
 					"Minecraft20");
-			ResultSet rs = connection.createStatement().executeQuery("select * from elevi");
+			ResultSet rs = connection.createStatement().executeQuery("select * from elevi where prof_id ='"+idLabel.getText()+"'");
 			while (rs.next())
 				ElevList.add(new Elev(rs.getInt("id"), rs.getString("nume"), rs.getString("prenume"),
 						rs.getString("media_romana"), rs.getString("media_mate"), rs.getString("media_info"),
@@ -112,22 +115,24 @@ public class EleviController implements Initializable {
 	}
 
 	public void delete() throws SQLException {
-		Elev elev = new Elev();
-		elev = studentTable.getSelectionModel().getSelectedItem();
-		String query = "delete from elevi where id = " + (Integer) elev.getId();
-		Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/test4", "root", "Minecraft20");
-		PreparedStatement preparedStatement = connection.prepareStatement(query);
-		preparedStatement.execute();
+		EntityManager EM = EMF.createEntityManager();
+		Elev elev = studentTable.getSelectionModel().getSelectedItem();
+		Elev e1 = EM.find(Elev.class, elev.getId());
+		EM.getTransaction().begin();
+		EM.merge(e1);
+		EM.remove(e1);
+		EM.getTransaction().commit();
+		EM.close();
 		refreshTable();
 	}
-
+	
 	public void refreshTable() {
 		try {
 
 			ElevList.clear();
 			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/test4", "root",
 					"Minecraft20");
-			ResultSet rs = connection.createStatement().executeQuery("select * from elevi");
+			ResultSet rs = connection.createStatement().executeQuery("select * from elevi where prof_id ='" + idLabel.getText()+"'");
 			while (rs.next())
 				ElevList.add(new Elev(rs.getInt("id"), rs.getString("nume"), rs.getString("prenume"),
 						rs.getString("media_romana"), rs.getString("media_mate"), rs.getString("media_info"),
@@ -148,17 +153,24 @@ public class EleviController implements Initializable {
 	}
 
 	public void switchToAddElev(ActionEvent event) throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("AddElev.fxml"));
-		Stage stage = new Stage();
+		String id = idLabel.getText();
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("AddElev.fxml"));
+		Parent root = loader.load();
+		AddElev controller = loader.getController();
+		controller.setprofIdLabel(String.valueOf(id));
+		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		stage.setScene(new Scene(root));
 		stage.show();
 	}
 
 	public void switchToMainMenu(ActionEvent event) throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
-		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-		scene = new Scene(root);
-		stage.setScene(scene);
+		String id = idLabel.getText();
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("MainMenu.fxml"));
+		Parent root = loader.load();
+		MainMenu controller = loader.getController();
+		controller.idLabel.setText((String.valueOf(id)));
+		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		stage.setScene(new Scene(root));
 		stage.show();
 	}
 

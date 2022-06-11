@@ -1,9 +1,7 @@
 package application;
 
 import java.io.IOException;
-import java.net.URL;
-import java.sql.ResultSet;
-import java.util.ResourceBundle;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -11,22 +9,19 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
+
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+
 import javafx.scene.control.TextField;
-import javafx.scene.control.cell.PropertyValueFactory;
+
 import javafx.stage.Stage;
 
 public class RegisterController {
@@ -123,13 +118,7 @@ public class RegisterController {
 		EM.getTransaction().commit();
 	}
 
-	public void delete(int id) {
-		EntityManager em = EMF.createEntityManager();
-		Customer cust = em.find(Customer.class, id);
-		em.getTransaction().begin();
-		em.remove(cust);
-		em.getTransaction().commit();
-	}
+	
 	
 	Stage stage;
 	Scene scene;

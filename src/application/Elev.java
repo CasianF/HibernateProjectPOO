@@ -6,7 +6,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -14,7 +13,6 @@ import javax.persistence.Table;
 @Table(name = "elevi")
 public class Elev {
 
-	public Elev() {}
 
 	public Elev(int id, String nume, String prenume, String media_romana, String media_mate, String media_info,
 			String media_bio, String media_sport, String media_generala) {
@@ -57,10 +55,10 @@ public class Elev {
 
 	@Column(name = "media_generala")
 	String media_generala;
-	
 	@ManyToOne
 	@JoinColumn(name = "prof_id")
 	Customer customer;
+	public Elev() {}
 
 	public int getId() {
 		return id;

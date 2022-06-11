@@ -11,16 +11,16 @@
    <children>
       <Label layoutX="283.0" layoutY="14.0" prefHeight="83.0" prefWidth="273.0" style="-fx-alignment: center;" text="Register Menu" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="28.0" />
+            <Font name="Dubai Medium" size="36.0" />
          </font>
       </Label>
       <TextField fx:id="emailTextField" layoutX="41.0" layoutY="206.0" prefHeight="25.0" prefWidth="758.0" promptText="Enter email here" />
       <TextField fx:id="usernameTextField" layoutX="40.0" layoutY="140.0" prefHeight="25.0" prefWidth="758.0" promptText="Enter username here" />
       <PasswordField fx:id="passwordTextField" layoutX="41.0" layoutY="273.0" prefHeight="25.0" prefWidth="758.0" promptText="Enter password here" />
       <PasswordField fx:id="confirmPasswordTextField" layoutX="41.0" layoutY="344.0" prefHeight="25.0" prefWidth="758.0" promptText="Confirm password here" />
-      <Button fx:id="registerButton" layoutX="366.0" layoutY="391.0" mnemonicParsing="false" onAction="#createButtonAction" prefHeight="64.0" prefWidth="108.0" text="Register">
+      <Button id="green" fx:id="registerButton" layoutX="366.0" layoutY="408.0" mnemonicParsing="false" onAction="#createButtonAction" prefHeight="47.0" prefWidth="108.0" stylesheets="@../../../../Downloads/stylesheet.css" text="Register">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="Dubai Medium" size="20.0" />
          </font>
       </Button>
       <Label fx:id="enterPasswordLabel" layoutX="623.0" layoutY="277.0" prefHeight="19.0" prefWidth="166.0" textFill="RED">
@@ -48,6 +48,29 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Button layoutX="6.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToLogIn" text="Back" />
+      <Button id="red" layoutX="6.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToLogIn" stylesheets="@../../../../Downloads/stylesheet.css" text="Back">
+         <font>
+            <Font name="Dubai Medium" size="13.0" />
+         </font></Button>
+      <Label layoutX="40.0" layoutY="104.0" prefHeight="35.0" prefWidth="93.0" text="Username:" textFill="WHITE">
+         <font>
+            <Font name="Dubai Medium" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="40.0" layoutY="167.0" prefHeight="33.0" prefWidth="93.0" text="Email:" textFill="WHITE">
+         <font>
+            <Font name="Dubai Medium" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="40.0" layoutY="233.0" prefHeight="33.0" prefWidth="93.0" text="Password:" textFill="WHITE">
+         <font>
+            <Font name="Dubai Medium" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="40.0" layoutY="308.0" prefHeight="35.0" prefWidth="178.0" text="Confirm passowrd:" textFill="WHITE">
+         <font>
+            <Font name="Dubai Medium" size="20.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

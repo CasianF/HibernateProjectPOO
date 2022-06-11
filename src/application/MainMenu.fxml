@@ -7,16 +7,16 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="508.0" prefWidth="838.0" style="-fx-background-color: gray;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainMenu">
    <children>
-      <Label layoutX="313.0" prefHeight="85.0" prefWidth="212.0" style="-fx-alignment: center;" text="Main Menu" textFill="WHITE">
+      <Label layoutX="308.0" layoutY="14.0" prefHeight="85.0" prefWidth="212.0" style="-fx-alignment: center;" text="Main Menu" textFill="WHITE">
          <font>
             <Font name="System Bold" size="34.0" />
          </font>
       </Label>
-      <Button layoutX="371.0" layoutY="356.0" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="40.0" prefWidth="97.0" text="Log out">
+      <Button layoutX="371.0" layoutY="445.0" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="40.0" prefWidth="97.0" text="Log out">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <Button layoutX="224.0" layoutY="254.0" mnemonicParsing="false" onAction="#switchToElevi" prefHeight="40.0" prefWidth="391.0" text="Elevi">
+      <Button layoutX="218.0" layoutY="285.0" mnemonicParsing="false" onAction="#switchToElevi" prefHeight="40.0" prefWidth="391.0" text="Elevi">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -26,13 +26,13 @@
             <Font name="System Bold" size="28.0" />
          </font>
       </Label>
-      <Button layoutX="224.0" layoutY="153.0" mnemonicParsing="false" onAction="#switchToEditProfile" prefHeight="40.0" prefWidth="391.0" text="Show profile">
+      <Button layoutX="224.0" layoutY="193.0" mnemonicParsing="false" onAction="#switchToEditProfile" prefHeight="40.0" prefWidth="391.0" text="Show profile">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Button>
       <Label fx:id="passwordLabel" layoutX="37.0" layoutY="456.0" prefHeight="0.0" prefWidth="0.0" text="123" textFill="#808080" />
-      <Label fx:id="idLabel" layoutX="358.0" layoutY="427.0" prefHeight="59.0" prefWidth="97.0" style="-fx-alignment: center;" textFill="#808080">
+      <Label fx:id="idLabel" layoutX="260.0" layoutY="427.0" prefHeight="59.0" prefWidth="97.0" style="-fx-alignment: center;" textFill="#808080">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>

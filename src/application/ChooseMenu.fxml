@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="508.0" prefWidth="838.0" style="-fx-background-color: gray;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ChooseLoginController">
+   <children>
+      <Label layoutX="254.0" prefHeight="100.0" prefWidth="351.0" style="-fx-alignment: center;" text="Alege tipul de login" textFill="WHITE">
+         <font>
+            <Font name="Dubai Medium" size="43.0" />
+         </font>
+      </Label>
+      <Button layoutX="231.0" layoutY="242.0" mnemonicParsing="false" onAction="#switchToElev" prefHeight="66.0" prefWidth="135.0" text="Elev">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Button>
+      <Button layoutX="462.0" layoutY="242.0" mnemonicParsing="false" onAction="#switchToProfesor" prefHeight="66.0" prefWidth="135.0" text="Profesor">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Button>
+      <Button fx:id="exitButton" layoutX="789.0" layoutY="7.0" mnemonicParsing="false" onAction="#closeActionButton" text="Exit">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

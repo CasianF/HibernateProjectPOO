@@ -38,7 +38,7 @@ public class Customer {
 	@Column(name = "password")
 	String password;
 
-	@OneToMany(targetEntity = Elev.class, cascade = CascadeType.ALL)
+	@OneToMany(targetEntity = Elev.class, orphanRemoval= true, cascade = CascadeType.ALL)
 	@JoinColumn(name = "prof_id")
 	public List<Elev> elevi = new ArrayList<>();
 
